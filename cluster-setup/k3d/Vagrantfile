@@ -1,0 +1,34 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# box = 'ubuntu/focal64'
+box = 'rwagner1967/centos8-gui-lab'
+boxversion = '0.0.1'
+
+vboxname = 'Centos 8'
+hostname = 'centos'
+memory = 4056
+cpu = 2
+ip_addr  = '192.168.62.2'
+
+
+Vagrant.configure("2") do |config|
+  # box to be installed
+  config.vm.box = box
+  config.vm.box_version = boxversion
+
+  config.vm.define vboxname do |node|
+
+    # define server
+    node.vm.provider "virtualbox" do |vb|
+      vb.name = vboxname
+      vb.memory = memory
+      vb.cpus = cpu
+    end
+
+    # define network
+    node.vm.hostname = hostname
+    node.vm.network "private_network", ip: ip_addr
+
+  end
+end

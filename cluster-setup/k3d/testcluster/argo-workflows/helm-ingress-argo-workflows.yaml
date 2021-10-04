@@ -1,0 +1,14 @@
+apiVersion: helm.cattle.io/v1
+kind: HelmChart
+metadata:
+  name: argo-workflows
+  namespace: argo
+spec:
+  repo: https://argoproj.github.io/argo-helm
+  chart: argo-workflows
+  version: 0.6.0
+  targetNamespace: argo
+  set:
+    controller.workflowNamespaces[0]: "default"
+    controller.workflowNamespaces[1]: "workflows" 
+    controller.containerRuntimeExecutor: "k8sapi"
