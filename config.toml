@@ -47,7 +47,7 @@ disqusShortname = ""
     # To change the background image on the homepage banner, replace 'banner.jpg' in
     # the 'static/img' folder.
     title = "The DevOps Toolkit Series"
-    subtitle = "Where DevOps becomes practice - change number 1 to trigger webhook"
+    subtitle = "Where DevOps becomes practice - change number 2 in public repo version to trigger webhook"
     buttonText = "Get Started"
 
 
